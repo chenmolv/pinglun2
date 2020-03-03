@@ -1,21 +1,26 @@
 import json
+import  os
+current_dir = os.path.abspath(os.path.dirname(__file__))
+parent_path = os.path.dirname(current_dir)+'\\'+"cong_bai_hei_hei_hei(1)"+'\\'
+path1 = parent_path + '\\' + '1.txt'
+pathPinglun=parent_path + '\\' + 'pinglun.txt'
 class readTxt:
 
     def txt(self):
-        x=open(r"../cong_bai_hei_hei_hei(1)/pinglun.txt","r",encoding='utf-8')
+        x=open(pathPinglun,"r",encoding='utf-8')
         data=x.readlines()
         return  data
 
     def clearTxt(self):
-        f = open(r"../cong_bai_hei_hei_hei(1)/1.txt", "r+")
+        f = open(path1, "r+")
         f.truncate()
 
     def writeTxt(msg):
-        f = open(r"../cong_bai_hei_hei_hei(1)/1.txt", "r+")
+        f = open(path1, "r+")
         f.write(msg)
 
     def txt2(self):
-        x=open(r"../cong_bai_hei_hei_hei(1)/1.txt","r")
+        x=open(path1,"r",encoding='utf-8')
         data=x.readlines()
         return  data
 

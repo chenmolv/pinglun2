@@ -55,8 +55,8 @@ class happy:
 
 
     def pinglun(id,token,txt):
-        # url = "https://appapi.youxiake.com/app/travelarticleComments/add"
-        url="http://192.168.22.172:6002/app/travelarticleComments/add"
+        url = "https://appapi.youxiake.com/app/travelarticleComments/add"
+        # url="http://192.168.22.172:6002/app/travelarticleComments/add"
         header = {
         "version": "5.0.2",
         "User-Agent": "ios/12.1/iPhone11,8",
@@ -94,7 +94,7 @@ class happy:
 
 
 if __name__ == "__main__":
-    Token = happy.user_login(17777777778, 123456)
+    Token = happy.user_login(17777777777, 123456)
     # Prise_Data = GetID.retrun_Data(Token)
     # sum1=0
     # for i in range(0,50):
