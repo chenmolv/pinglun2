@@ -98,7 +98,7 @@ if __name__ == "__main__":
     Token = happy.user_login(18305091906, 123456)
     Prise_Data = GetID.retrun_Data(Token)
     sum1=0
-    for i in range(0,5):
+    for i in range(0,50):
      x=happy.dianzan(Prise_Data[i],Token)
      qwe=json.loads(x.text)
      print(qwe)
@@ -109,9 +109,9 @@ if __name__ == "__main__":
     print("成功",sum1,"个")
     print(datetime.datetime.now())
 
-    # pinglunID=int(readTxt.txt2(1)[0])
-    # x=happy.pinglun2(pinglunID,Token)
-    # readTxt.updataTxt(x)
+    pinglunID=int(readTxt.txt2(1)[0])
+    x=happy.pinglun2(pinglunID,Token)
+    readTxt.updataTxt(x)
 
 
 
