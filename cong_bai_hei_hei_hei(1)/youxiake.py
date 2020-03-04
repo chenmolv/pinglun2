@@ -78,7 +78,6 @@ class happy:
             b = random.randrange(0, a)
             y = happy.pinglun(id2, token, TXT[b])
             requestNum = requestNum + 1
-            print(id2,TXT[b],token)
             print(y.text)
             id2 = id2 - 1
             qwe2 = json.loads(y.text)
@@ -86,31 +85,33 @@ class happy:
                 sum2 = sum2 + 1
             else:
                 sum2 = sum2 + 0
-            if sum2 >= 5:
+            if sum2 >= 20:
+                print(id2)
                 break
+
         print("成功", sum2, "个")
         return requestNum
 
 
 
 if __name__ == "__main__":
-    Token = happy.user_login(17777777777, 123456)
-    # Prise_Data = GetID.retrun_Data(Token)
-    # sum1=0
-    # for i in range(0,50):
-    #  x=happy.dianzan(Prise_Data[i],Token)
-    #  qwe=json.loads(x.text)
-    #  print(qwe)
-    #  if(qwe["msg"]=="点赞成功"):
-    #      sum1=sum1+1
-    #  else:
-    #      sum1=sum1+0
-    # print("成功",sum1,"个")
-    # print(datetime.datetime.now())
+    Token = happy.user_login(18305091906, 123456)
+    Prise_Data = GetID.retrun_Data(Token)
+    sum1=0
+    for i in range(0,5):
+     x=happy.dianzan(Prise_Data[i],Token)
+     qwe=json.loads(x.text)
+     print(qwe)
+     if(qwe["msg"]=="点赞成功"):
+         sum1=sum1+1
+     else:
+         sum1=sum1+0
+    print("成功",sum1,"个")
+    print(datetime.datetime.now())
 
-    pinglunID=int(readTxt.txt2(1)[0])
-    x=happy.pinglun2(pinglunID,Token)
-    readTxt.updataTxt(x)
+    # pinglunID=int(readTxt.txt2(1)[0])
+    # x=happy.pinglun2(pinglunID,Token)
+    # readTxt.updataTxt(x)
 
 
 
