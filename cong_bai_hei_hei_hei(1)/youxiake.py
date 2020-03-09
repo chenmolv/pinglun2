@@ -171,7 +171,7 @@ class happy:
         sum2 = 0
         for i in range(50):
             b = random.randrange(0, a)
-            y = happy.pinglun(id2, token, TXT[b])
+            y = happy.sheyingPinglun(id2, token, TXT[b])
             requestNum = requestNum + 1
             print(y.text)
             id2 = id2 - 1
