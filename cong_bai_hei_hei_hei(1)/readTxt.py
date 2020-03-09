@@ -23,11 +23,6 @@ class readTxt:
         txtNum = int(readTxt.txt(path)[0])
         No=txtNum-num
         readTxt.clearTxt(path)
-        readTxt.writeTxt(str(No))
+        readTxt.writeTxt(path,str(No))
 
-
-if __name__ == "__main__":
-    print(readTxt.txt(pathTravleId)[0])
-    print(readTxt.txt(pathTravleId)[1])
-    print(readTxt.txt(pathTravleId)[2])
 

@@ -105,7 +105,7 @@ class happy:
 
 
     def gonglue(id,token,content):
-        url = "https://appapi.youxiake.com/app/travelarticleComments/add"
+        url = "https://appapi.youxiake.com/app/news/addcomment"
         header = {
         "version": "5.0.2",
         "User-Agent": "ios/12.1/iPhone11,8",
@@ -125,11 +125,11 @@ class happy:
         TXT = readTxt.txt(pathPinglun)
         a = len(TXT) - 1
         requestNum = 0
-        id2 = myNum
+        id2 = int(myNum)
         sum2 = 0
         for i in range(50):
             b = random.randrange(0, a)
-            y = happy.pinglun(id2, token, TXT[b])
+            y = happy.gonglue(id2, token, TXT[b])
             requestNum = requestNum + 1
             print(y.text)
             id2 = id2 - 1
@@ -156,7 +156,7 @@ class happy:
          }
         data={"album_id": id,"content":content,"channel":3,"comment_type":0}
         respone = happy.http(url, header, data)
-        b = random.randrange(0, 50)
+        b = random.randrange(0, 5)
         time.sleep(b)
         return respone
 
@@ -191,33 +191,34 @@ class happy:
 
 
 if __name__ == "__main__":
-    Token = happy.user_login(18305091906, 123456)
-    Prise_Data = GetID.retrun_Data(Token)
-    sum1=0
-    for i in range(0,50):
-     x=happy.dianzan(Prise_Data[i],Token)
-     qwe=json.loads(x.text)
-     print(qwe)
-     if(qwe["msg"]=="点赞成功"):
-         sum1=sum1+1
-     else:
-         sum1=sum1+0
-    print("成功",sum1,"个")
-    print(datetime.datetime.now())
+    Token = happy.user_login(17777777777, 123456)
+    # Prise_Data = GetID.retrun_Data(Token)
+    # sum1=0
+    # for i in range(0,50):
+    #  x=happy.dianzan(Prise_Data[i],Token)
+    #  qwe=json.loads(x.text)
+    #  print(qwe)
+    #  if(qwe["msg"]=="点赞成功"):
+    #      sum1=sum1+1
+    #  else:
+    #      sum1=sum1+0
+    # print("成功",sum1,"个")
+    # print(datetime.datetime.now())
 
-    pinglunID=int(readTxt.txt(pathTravleId)[0])   #游记评论#
-    x=happy.pinglun2(pinglunID,Token)
-    readTxt.updataTxt(pathTravleId,x)
+    # pinglunID=int(readTxt.txt(pathTravleId)[0])   #游记评论#
+    # x=happy.pinglun2(pinglunID,Token)
+    # readTxt.updataTxt(pathTravleId,x)
 
 
     gonglueID=int(readTxt.txt(pathGonglueID)[0])   #攻略评论#
     x=happy.gonglue2(gonglueID,Token)
     readTxt.updataTxt(pathGonglueID,x)
-
-
-    pathSheyingID=int(readTxt.txt(pathSheyingID)[0])   #游记评论#
-    x=happy.pinglun2(pathSheyingID,Token)
-    readTxt.updataTxt(pathSheyingID,x)
+    #
+    #
+    # pathSheyingID=float(readTxt.txt(pathSheyingID)[0])   #摄影评论#
+    # print(pathSheyingID)
+    # x=happy.sheyingPinglun2(pathSheyingID,Token)
+    # readTxt.updataTxt(pathSheyingID,x)
 
 
 
